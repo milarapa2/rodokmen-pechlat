@@ -72,19 +72,7 @@ details.br .sp{color:var(--mut)}
 .mlegend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:18px}.gal figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:0;border-radius:0}.gal figcaption{padding:8px 10px;font-size:.9rem}.gal .cr{color:var(--mut);font-size:.78rem}
 .places{columns:2 260px;margin:12px 0 0;padding-left:0;list-style:none;font-size:.95rem}.places li{margin:3px 0;break-inside:avoid}
-/*pr*/.lad{margin-top:14px;display:grid;gap:0}
-.lad-r{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.3fr);gap:8px 12px;align-items:start;position:relative;padding-bottom:14px}
-.lad-r::before{content:"";position:absolute;left:calc(5.5rem + 24px);top:0;bottom:0;border-left:2px solid var(--line)}
-.lad-r:last-child::before{bottom:50%}
-.lad-g{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;padding-top:10px;text-align:right}
-.lad-m,.lad-s{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:.9rem;line-height:1.35}
-.lad-m{border-left:4px solid var(--acc)}.lad-s{border-style:dashed}
-.lad-m b,.lad-s b{display:block;font-weight:600}.lad-m .yr,.lad-s .yr{display:block;color:var(--mut);font-size:.84rem}
-.lad-m .nt{display:block;color:var(--un);font-size:.78rem;font-style:italic}.lad-s .kol{display:block;color:var(--acc);font-size:.82rem;margin-top:2px}
-.lad-ss{display:flex;flex-wrap:wrap;gap:8px}.lad-ss:empty{display:none}
-@media (max-width:640px){.lad-r{grid-template-columns:3.2rem minmax(0,1fr)}.lad-r::before{left:calc(3.2rem + 20px)}.lad-ss{grid-column:2}.lad-g{font-size:.7rem}}
-.pstat{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pstat div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:150px}.pstat b{display:block;font-size:1.5rem;font-variant-numeric:tabular-nums}.pstat span{color:var(--mut);font-size:.88rem}
-/*/pr*//*dt*/.dtw{overflow-x:auto;margin-top:12px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+/*dt*/.dtw{overflow-x:auto;margin-top:12px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
 .dt,.dt ul{display:flex;justify-content:center;margin:0;padding:0}
 .dt{width:max-content;min-width:100%}
 .dt ul{padding-top:18px;position:relative}
@@ -104,7 +92,19 @@ details.br .sp{color:var(--mut)}
 .dc.top{border-left:4px solid var(--acc);max-width:180px}
 .gens{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--mut);margin-top:6px}
 .br7{margin-top:22px}.br7 h3{margin:0 0 2px;font-size:1.05rem}
-/*/dt*/</style>
+/*/dt*//*pr*/.lad{margin-top:14px;display:grid;gap:0}
+.lad-r{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.3fr);gap:8px 12px;align-items:start;position:relative;padding-bottom:14px}
+.lad-r::before{content:"";position:absolute;left:calc(5.5rem + 24px);top:0;bottom:0;border-left:2px solid var(--line)}
+.lad-r:last-child::before{bottom:50%}
+.lad-g{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;padding-top:10px;text-align:right}
+.lad-m,.lad-s{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:.9rem;line-height:1.35}
+.lad-m{border-left:4px solid var(--acc)}.lad-s{border-style:dashed}
+.lad-m b,.lad-s b{display:block;font-weight:600}.lad-m .yr,.lad-s .yr{display:block;color:var(--mut);font-size:.84rem}
+.lad-m .nt{display:block;color:var(--un);font-size:.78rem;font-style:italic}.lad-s .kol{display:block;color:var(--acc);font-size:.82rem;margin-top:2px}
+.lad-ss{display:flex;flex-wrap:wrap;gap:8px}.lad-ss:empty{display:none}
+@media (max-width:640px){.lad-r{grid-template-columns:3.2rem minmax(0,1fr)}.lad-r::before{left:calc(3.2rem + 20px)}.lad-ss{grid-column:2}.lad-g{font-size:.7rem}}
+.pstat{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pstat div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:150px}.pstat b{display:block;font-size:1.5rem;font-variant-numeric:tabular-nums}.pstat span{color:var(--mut);font-size:.88rem}
+/*/pr*/</style>
 </head>
 <body>
 <main>
@@ -115,6 +115,7 @@ details.br .sp{color:var(--mut)}
     <ul style="margin:6px 0 0;padding-left:1.2em">
       <li><b>Jak jsou Pechláti příbuzní:</b> diagram od Tomáše a Doroty k dnešku, bratranci z 2.–6. kolena a počty Pechlátů – <a href="#pribuzni">diagram</a>.</li>
       <li><b>Mapa míst</b> a nový název: rod pochází z <b>Radkovic u Čestic</b> (okres Strakonice) – <a href="#mapa-mist">Kde rod žil</a>.</li>
+      <li><b>Třetí rod Pechlátů – Švejcarova Lhota čp. 3</b> (fara Kraselov, 2,5 km od Radkovic): sedlák Vojtěch Pechlát od roku 1799 a jeho potomci až do konce 19. století; zatím nevíme, jak souvisí s Radkovicemi. Praděda Jan měl dva starší bratry, Josefa (1863) a Františka (1865), narozené v Hodějově.</li>
       <li><b>Doplněna moderní rodina:</b> diagram všech sedmi větví potomků Rudolfa a Vlasty po generacích (sourozenci táty Jiřího, jejich děti, vnoučata a pravnoučata) – <a href="#potomci">Potomci</a>.</li>
       <li><b>O dvě generace dál:</b> svatba prapradědy Františka Pechláta s Marií Šímovou (12. 11. 1861, Hodějov). Rod sahá v Radkovicích čp. 9 k Václavovi (1808–1865) a Bartolomějovi († 1832). Všichni Pechláti z farnosti Čestice v letech 1749–1877 pocházeli z Radkovic (čp. 9 a 10).</li>
       <li><b>Nalezen křest dědy Rudolfa:</b> narodil se 2. 10. 1910 v Jetišově čp. 4 (fara Čestice), ne v Příbrami, kde později žil.</li>
@@ -153,7 +154,7 @@ details.br .sp{color:var(--mut)}
         <div class="node ok"><b>Anna Dubová</b><span class="f"><i>⌂</i>z Kraselova čp. 20 (příjmení Dubová/Důbová – čtení nejisté)</span></div>
       </div></div>
     </div>
-    <p class="sibs">Děti Františka a Marie (Radkovice čp. 9): Jan (1867), dvojčata Vojtěch a Marie (1870, oba zemřeli jako kojenci), František (1871), Marie (1874–1878), Anna (1876–1877).</p>
+    <p class="sibs">Děti Františka a Marie: Josef (* 3. 1. 1863) a František (* 5. 1. 1865) – oba v Hodějově čp. 23 u Šímových; v Radkovicích čp. 9 pak Jan (1867), dvojčata Vojtěch a Marie (1870, oba zemřeli jako kojenci), František (1871), Marie (1874–1878), Anna (1876–1877).</p>
     <div class="ln"></div>
     <div class="gen">
       <div class="pair"><div class="pl">∞ 26. 1. 1897, Kraselov</div><div class="pn">
@@ -226,8 +227,8 @@ details.br .sp{color:var(--mut)}
   <h2 id="pribuzni">Jak jsou Pechláti příbuzní</h2>
   <p>Hlavní linie (plný okraj) vede od nejstarších známých předků k dnešní rodině; generace jsou počítané od Přemysla a Víta. Čárkovaně jsou sourozenci našich předků – jejich dnešní potomci jsou s generací Přemysla a Víta příbuzní jako <b>bratranci z 2., 3., 4. nebo 6. kolena</b>. Kam přesně dnešní Pechláti mimo naši rodinu patří, zatím nevíme (matriky mladší 100 let nejsou veřejně online). Spojení Bartoloměje s Tomášem je zatím hypotéza.</p>
   <div class="pstat"><div><b>225</b><span>Pechlátů a Pechlátových v ČR (2016, kdejsme.cz)</span></div><div><b>63</b><span>z nich na Strakonicku – odkud rod pochází</span></div><div><b>36–40</b><span>Pechlátů v naší části rodu dnes (potomci Rudolfa a Vlasty)</span></div><div><b>asi 90</b><span>žijících potomků Rudolfa a Vlasty i s manželi</span></div></div>
-  <div class="lad"><div class="lad-r"><div class="lad-g">7. generace zpět</div><div class="lad-m"><b>Tomáš Pechlát × Dorota</b><span class="yr">Radkovice čp. 10 · děti 1763–1781</span></div><div class="lad-ss"><div class="lad-s"><b>Jakub (1774–1846) × Anna Šípková</b><span class="yr">Radkovice čp. 10</span><span class="kol">jeho potomci = bratranci z 6. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">6.</div><div class="lad-m"><b>Bartoloměj († 1832) × Marie</b><span class="yr">Radkovice čp. 9</span><span class="nt">syn Tomáše? (Bartoloměj * 1778 – neověřeno)</span></div><div class="lad-ss"></div></div><div class="lad-r"><div class="lad-g">5.</div><div class="lad-m"><b>Václav (1808–1865) × Anna</b><span class="yr">Radkovice čp. 9</span></div><div class="lad-ss"></div></div><div class="lad-r"><div class="lad-g">4.</div><div class="lad-m"><b>František (* 1837) × Marie Šímová</b><span class="yr">Radkovice čp. 9</span></div><div class="lad-ss"><div class="lad-s"><b>Václav (* 1839)</b><span class="yr">Radkovice čp. 9</span><span class="kol">jeho potomci = bratranci z 4. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">3.</div><div class="lad-m"><b>Jan (* 1867) × Anna Krejčí</b><span class="yr">Radkovice → Jetišov čp. 4</span></div><div class="lad-ss"><div class="lad-s"><b>František (* 1871)</b><span class="yr">Radkovice čp. 9</span><span class="kol">jeho potomci = bratranci z 3. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">2.</div><div class="lad-m"><b>Rudolf (1910–1962) × Vlasta Vladyková</b><span class="yr">Jetišov → Příbram</span></div><div class="lad-ss"><div class="lad-s"><b>František (1899–1965)</b><span class="yr">Jetišov</span><span class="kol">jeho potomci = bratranci z 2. kolena</span></div><div class="lad-s"><b>Josef (* 1905)</b><span class="yr">Jetišov</span><span class="kol">jeho potomci = bratranci z 2. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">1.</div><div class="lad-m"><b>Jiří a jeho 6 sourozenců</b><span class="yr">Rudolf, Jan, Aurelie, Vlastimil, Ctibor, Jiří, Martina</span></div><div class="lad-ss"></div></div><div class="lad-r"><div class="lad-g">dnes</div><div class="lad-m"><b>Přemysl, Vít, bratranci a sestřenice a jejich děti</b><span class="yr">asi 90 žijících, z toho 36–40 Pechlátů</span></div><div class="lad-ss"></div></div></div>
-  <p class="sibs">Ve farnosti Čestice žili v letech 1749–1877 Pechláti jen v Radkovicích (čp. 9 a 10), proto je velmi pravděpodobné, že téměř všichni dnešní Pechláti patří k jednomu rodu.</p>
+  <div class="lad"><div class="lad-r"><div class="lad-g">7. generace zpět</div><div class="lad-m"><b>Tomáš Pechlát × Dorota</b><span class="yr">Radkovice čp. 10 · děti 1763–1781</span></div><div class="lad-ss"><div class="lad-s"><b>Jakub (1774–1846) × Anna Šípková</b><span class="yr">Radkovice čp. 10</span><span class="kol">jeho potomci = bratranci z 6. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">6.</div><div class="lad-m"><b>Bartoloměj († 1832) × Marie</b><span class="yr">Radkovice čp. 9</span><span class="nt">syn Tomáše? (Bartoloměj * 1778 – neověřeno)</span></div><div class="lad-ss"></div></div><div class="lad-r"><div class="lad-g">5.</div><div class="lad-m"><b>Václav (1808–1865) × Anna</b><span class="yr">Radkovice čp. 9</span></div><div class="lad-ss"></div></div><div class="lad-r"><div class="lad-g">4.</div><div class="lad-m"><b>František (* 1837) × Marie Šímová</b><span class="yr">Hodějov 23 → Radkovice čp. 9</span></div><div class="lad-ss"><div class="lad-s"><b>Václav (* 1839)</b><span class="yr">Radkovice čp. 9</span><span class="kol">jeho potomci = bratranci z 4. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">3.</div><div class="lad-m"><b>Jan (* 1867) × Anna Krejčí</b><span class="yr">Radkovice → Jetišov čp. 4</span></div><div class="lad-ss"><div class="lad-s"><b>Josef (* 1863)</b><span class="yr">Hodějov čp. 23</span><span class="kol">jeho potomci = bratranci z 3. kolena</span></div><div class="lad-s"><b>František (* 1865)</b><span class="yr">Hodějov čp. 23</span><span class="kol">jeho potomci = bratranci z 3. kolena</span></div><div class="lad-s"><b>František (* 1871)</b><span class="yr">Radkovice čp. 9</span><span class="kol">jeho potomci = bratranci z 3. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">2.</div><div class="lad-m"><b>Rudolf (1910–1962) × Vlasta Vladyková</b><span class="yr">Jetišov → Příbram</span></div><div class="lad-ss"><div class="lad-s"><b>František (1899–1965)</b><span class="yr">Jetišov</span><span class="kol">jeho potomci = bratranci z 2. kolena</span></div><div class="lad-s"><b>Josef (* 1905)</b><span class="yr">Jetišov</span><span class="kol">jeho potomci = bratranci z 2. kolena</span></div></div></div><div class="lad-r"><div class="lad-g">1.</div><div class="lad-m"><b>Jiří a jeho 6 sourozenců</b><span class="yr">Rudolf, Jan, Aurelie, Vlastimil, Ctibor, Jiří, Martina</span></div><div class="lad-ss"></div></div><div class="lad-r"><div class="lad-g">dnes</div><div class="lad-m"><b>Přemysl, Vít, bratranci a sestřenice a jejich děti</b><span class="yr">asi 90 žijících, z toho 36–40 Pechlátů</span></div><div class="lad-ss"></div></div></div>
+  <p class="sibs">Ve farnosti Čestice žili v letech 1749–1877 Pechláti jen v Radkovicích (čp. 9 a 10), další rod žil od roku 1799 ve Švejcarově Lhotě čp. 3 (fara Kraselov, 2,5 km od Radkovic) – zakladatel sedlák Vojtěch Pechlát; zda je s radkovickými příbuzný, zatím nevíme.</p>
 
   <h2 id="potomci">Potomci Rudolfa a Vlasty</h2>
   <p>Podle rodinného rodokmenu v MyHeritage. Každá ze sedmi větví má vlastní diagram; řádky odpovídají generacím: <b>děti Rudolfa a Vlasty</b> → <b>vnoučata</b> (např. Přemysl a Vít) → <b>pravnoučata</b> → <b>prapravnoučata</b>. U žijících uvádím jen rok narození; „?“ = na fotce listu špatně čitelné. Na telefonu lze diagram posouvat do strany.</p>
