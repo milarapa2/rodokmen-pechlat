@@ -61,7 +61,27 @@ details.br{background:var(--card);border:1px solid var(--line);border-radius:14p
 details.br summary{cursor:pointer;font-weight:600}
 details.br ul{margin:8px 0 2px;padding-left:1.2em}details.br li{margin:4px 0}
 details.br .sp{color:var(--mut)}
-</style>
+/*dt*/.dtw{overflow-x:auto;margin-top:12px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.dt,.dt ul{display:flex;justify-content:center;margin:0;padding:0}
+.dt{width:max-content;min-width:100%}
+.dt ul{padding-top:18px;position:relative}
+.dt li{list-style:none;position:relative;padding:18px 4px 0;display:flex;flex-direction:column;align-items:center}
+.dt>li{padding-top:0}
+.dt li::before,.dt li::after{content:"";position:absolute;top:0;right:50%;width:50%;height:18px;border-top:2px solid var(--line)}
+.dt li::after{right:auto;left:50%;border-left:2px solid var(--line)}
+.dt li:only-child::before,.dt li:only-child::after{border-top:0}
+.dt li:only-child::after{left:50%}
+.dt li:first-child::before,.dt li:last-child::after{border:0}
+.dt li:last-child::before{border-right:2px solid var(--line)}
+.dt>li::before,.dt>li::after{display:none}
+.dt ul::before{content:"";position:absolute;top:0;left:50%;height:18px;border-left:2px solid var(--line)}
+.dc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 9px;width:max-content;max-width:150px;font-size:.82rem;line-height:1.3;text-align:center}
+.dc b{display:block;font-weight:600}.dc .yr{display:block;color:var(--mut);font-variant-numeric:tabular-nums}
+.dc .sp{display:block;color:var(--mut);font-size:.76rem;margin-top:2px}.dc .nt{display:block;color:var(--un);font-size:.72rem;margin-top:2px;font-style:italic}
+.dc.top{border-left:4px solid var(--acc);max-width:180px}
+.gens{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--mut);margin-top:6px}
+.br7{margin-top:22px}.br7 h3{margin:0 0 2px;font-size:1.05rem}
+/*/dt*/</style>
 </head>
 <body>
 <main>
@@ -70,7 +90,7 @@ details.br .sp{color:var(--mut)}
   <p class="lead">Předci z tatínkovy strany. Údaje pocházejí z digitalizovaných matrik Státního oblastního archivu v Třeboni a z rodinného rodokmenu v MyHeritage. U ověřených zápisů je odkaz na snímek matriky, jeho výřez a přepis. Údaje o žijících lidech uvádím jen v nezbytné míře. Maminčina větev je na webu <a href="https://milarapa2.github.io/rodokmen-krejsa/">Rod Krejsů ze Šumavských Hoštic</a>.</p>
   <div class="tr" style="border-left:3px solid var(--line)"><b>Co je nového (28. 10. 2026)</b>
     <ul style="margin:6px 0 0;padding-left:1.2em">
-      <li><b>Doplněna moderní rodina:</b> všech sedm větví potomků Rudolfa a Vlasty podle MyHeritage – <a href="#potomci">Potomci</a>.</li>
+      <li><b>Doplněna moderní rodina:</b> diagram všech sedmi větví potomků Rudolfa a Vlasty po generacích (sourozenci táty Jiřího, jejich děti, vnoučata a pravnoučata) – <a href="#potomci">Potomci</a>.</li>
       <li><b>O dvě generace dál:</b> svatba prapradědy Františka Pechláta s Marií Šímovou (12. 11. 1861, Hodějov). Rod sahá v Radkovicích čp. 9 k Václavovi (asi 1805–1865) a Bartolomějovi. Všichni Pechláti z farnosti Čestice v letech 1749–1877 pocházeli z Radkovic (čp. 9 a 10).</li>
       <li><b>Nalezen křest dědy Rudolfa:</b> narodil se 2. 10. 1910 v Jetišově čp. 4 (fara Čestice), ne v Příbrami, kde později žil.</li>
       <li><b>Sourozenci:</b> Rudolf byl nejmladší z šesti dětí – před ním se narodili František (1899), Anna (1902), nedonošený syn bez jména (1904), Josef (1905) a Jan (1907, zemřel ve dvou měsících).</li>
@@ -129,44 +149,25 @@ details.br .sp{color:var(--mut)}
     </div>
     <p class="sibs">Rudolfovi sourozenci (všichni narozeni v Jetišově čp. 4, ověřeno v matrice): <b>František</b> (* 6. 10. 1899, † 16. 8. 1965; sňatek 1927 v Kraselově), <b>Anna</b> (* 23. 7. 1902, † 4. 9. 1950 v Doubravici; provdaná 1926 za Václava Pavlíka), nedonošený syn bez jména (24. 2. 1904), <b>Josef</b> (* 4. 3. 1905), <b>Jan</b> (* 26. 6. 1907, † 25. 8. 1907). Rudolf (1910) byl nejmladší.</p>
     <div class="ln"></div>
-    <div class="gen"><div class="node wide un"><b><a href="#potomci">Sedm dětí Rudolfa a Vlasty</a></b><span class="f">Rudolf (1942), Jan (1943–2015), Aurelie (1947), Vlastimil, Ctibor (1951), Jiří (1954), Martina (1955)</span></div></div>
+    <div class="gen"><div class="pair"><div class="pl">děti Rudolfa a Vlasty (sourozenci táty Jiřího) – <a href="#potomci">celé větve níže</a></div><div class="pn">
+      <div class="node un"><b>Rudolf</b><span class="f">1942</span></div><div class="node un"><b>Jan</b><span class="f">1943–2015</span></div><div class="node un"><b>Aurelie</b><span class="f">1947</span></div><div class="node un"><b>Vlastimil</b><span class="f">1949?</span></div><div class="node un"><b>Ctibor</b><span class="f">1951</span></div><div class="node un" style="border-color:var(--acc)"><b>Jiří</b><span class="f">1954 · ∞ Helena Krejsová (<a href="https://milarapa2.github.io/rodokmen-krejsa/">Rod Krejsů</a>)</span></div><div class="node un"><b>Martina</b><span class="f">1955</span></div>
+    </div></div></div>
     <div class="ln"></div>
-    <div class="gen"><div class="node"><b>Jiří Pechlát</b><span class="f"><i>∞</i>Helena Krejsová (viz <a href="https://milarapa2.github.io/rodokmen-krejsa/">Rod Krejsů</a>)</span></div></div>
-    <div class="ln"></div>
-    <div class="gen"><div class="node"><b>Vít Pechlát</b></div></div>
+    <div class="gen"><div class="pair"><div class="pl">děti Jiřího a Heleny</div><div class="pn">
+      <div class="node un"><b>Přemysl</b><span class="f">1978</span></div><div class="node un"><b>Vít</b><span class="f">1984</span></div>
+    </div></div></div>
   </div>
 
   <h2 id="potomci">Potomci Rudolfa a Vlasty</h2>
-  <p>Podle rodinného rodokmenu v MyHeritage (kniha s rodovými listy). U žijících uvádím jen rok narození. „?“ znamená, že údaj na fotografii listu nebyl dobře čitelný; opravy rád doplním.</p>
-  <details class="br" open><summary>Ing. Rudolf Pechlát ml. (* 1942) × Alena roz. Kopecká (1947–2010)</summary><ul>
-    <li>Mgr. Ctibor (1976) × Mgr. Svatava roz. Filipová (1977) → Barbora (2007), Klára (2009)</li>
-    <li>Bc. Matěj (1977) × Ing. Barbora roz. Gajdošová (1977) → Lucie (2007)</li>
-    <li>Bohdan (1981) × Arlene Baldovino Martinez-Pechlát (1981) → Artur Jacob (2019)</li></ul></details>
-  <details class="br" open><summary>Jan Pechlát (6. 5. 1943 – 9. 4. 2015) × Milena roz. Černá</summary><ul>
-    <li>Jan ml. (1969?) × Pavla roz. Guziorová? → Adéla (2003)</li>
-    <li>Jana Hospodková, Benešová roz. Pechlátová (1969?) → Viktorie Hospodková, Veronika, Martin a Natálie Benešovi</li>
-    <li>Jakub (1995?) × Nikola Mrkvicová → Magda (2021), Matěj (2022)</li>
-    <li>Lukáš × Kamila → dcera (2018?)</li>
-    <li class="sp">Na listu je i Drahuše? Pechlátová – vazbu z fotografie nečtu jistě.</li></ul></details>
-  <details class="br" open><summary>Aurelie Peterková roz. Pechlátová (* 1947) × Miroslav Peterka st. (1944)</summary><ul>
-    <li>Miroslav ml. (1969) × Lenka roz. Kuteničová? (1970) → Tadeáš (1998), Matouš (2003)</li>
-    <li>Aurelie Stiborová roz. Peterková (1972) × Jiří Stibor (1968) → Vlastimil Peterka (2000), Veronika Stiborová (2002), Markéta (2006)</li></ul></details>
-  <details class="br" open><summary>Vlastimil Pechlát (1949?) × Zdenka roz. Rejholcová</summary><ul>
-    <li>Zdenka Havelková roz. Pechlátová × Ing. Petr Havelka → Matěj? a Ema Havelkovi</li>
-    <li>Zuzana Fuitková roz. Pechlátová (1973?) × Milan Fuitík → Mgr. Lucie Valečková roz. Fuitková × Ing. Martin Valeček → Natálie (2021), Ondřej (2022)</li>
-    <li class="sp">List je na fotografii rozmazaný; data a některá jména nejistá.</li></ul></details>
-  <details class="br" open><summary>Ctibor Pechlát st. (* 1951) × Dana roz. Vítová (1957)</summary><ul>
-    <li>Lenka Nápravníková roz. Pechlátová (1976) × Roman Nápravník → Adam (2006), Ondra (2010)</li>
-    <li>Ctibor ml. (1980) × Petra roz. Čabáková → Evelína (2005), Matěj (2007), Vavřinec (2010)</li>
-    <li>Jana Šeberková roz. Pechlátová (1992) × Jan Šeberka → Vít (2019), Josef (2021)</li>
-    <li>Jakub (1997) × Dominika Schmidtová</li></ul></details>
-  <details class="br" open><summary>Ing. Jiří Pechlát (* 1954) × Ing. Helena roz. Krejsová (1954)</summary><ul>
-    <li>Mgr. Přemysl (1978) × Ing. Jana roz. Česneková (1977) → Ela (2014), Adam (2016)</li>
-    <li>Ing. Vít, MBA (1984) × Mgr. Tereza roz. Suntychová (1993) → Vincent (2023)</li></ul></details>
-  <details class="br" open><summary>Martina Kubátová roz. Pechlátová (* 1955) × Zdeněk Kubát (1952)</summary><ul>
-    <li>Martin (1976) × Veronika roz. Roubíčková (1976) → Samuel (2010), Kristián (2016)</li>
-    <li>Zdeněk ml. (1978) × Vlasta? → Eliška (2008), Šimon (2013)</li>
-    <li>dále na listu Martina Kubátová (1976), Nikola (1996) s Matyášem (2023) a Daniel (1999) – přiřazení k rodinám z fotografie nejisté</li></ul></details>
+  <p>Podle rodinného rodokmenu v MyHeritage. Každá ze sedmi větví má vlastní diagram; řádky odpovídají generacím: <b>děti Rudolfa a Vlasty</b> → <b>vnoučata</b> (např. Přemysl a Vít) → <b>pravnoučata</b> → <b>prapravnoučata</b>. U žijících uvádím jen rok narození; „?“ = na fotce listu špatně čitelné. Na telefonu lze diagram posouvat do strany.</p>
+  <div class="tree" style="margin-top:10px"><div class="pair"><div class="pl">∞ 1940</div><div class="pn"><div class="node ok"><b>Rudolf Pechlát</b><span class="f">1910–1962</span></div><div class="node un"><b>Vlasta Vladyková</b><span class="f">1920–1996?</span></div></div></div></div>
+  <section class="br7"><h3>Ing. Rudolf ml. (1942)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Ing. Rudolf ml.</b><span class="yr">1942</span><span class="sp">∞ Alena roz. Kopecká (1947–2010)</span></div><ul><li><div class="dc"><b>Mgr. Ctibor</b><span class="yr">1976</span><span class="sp">∞ Mgr. Svatava roz. Filipová (1977)</span></div><ul><li><div class="dc"><b>Barbora</b><span class="yr">2007</span></div></li><li><div class="dc"><b>Klára</b><span class="yr">2009</span></div></li></ul></li><li><div class="dc"><b>Bc. Matěj</b><span class="yr">1977</span><span class="sp">∞ Ing. Barbora roz. Gajdošová (1977)</span></div><ul><li><div class="dc"><b>Lucie</b><span class="yr">2007</span></div></li></ul></li><li><div class="dc"><b>Bohdan</b><span class="yr">1981</span><span class="sp">∞ Arlene Baldovino Martinez (1981)</span></div><ul><li><div class="dc"><b>Artur Jacob</b><span class="yr">2019</span></div></li></ul></li></ul></li></ul></div></section>
+  <section class="br7"><h3>Jan (1943–2015)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Jan</b><span class="yr">1943–2015</span><span class="sp">∞ Milena roz. Černá</span></div><ul><li><div class="dc"><b>Jan ml.</b><span class="yr">1968?</span><span class="sp">∞ Drahuše?</span><span class="sp">∞ Pavla roz. Guziorová?</span><span class="nt">přiřazení dětí k matkám nejisté</span></div><ul><li><div class="dc"><b>Lukáš</b><span class="sp">∞ Kamila</span></div><ul><li><div class="dc"><b>dcera</b><span class="yr">2018?</span></div></li></ul></li><li><div class="dc"><b>Jakub</b><span class="yr">1995?</span><span class="sp">∞ Nikola Mrkvicová</span></div><ul><li><div class="dc"><b>Magda</b><span class="yr">2021</span></div></li><li><div class="dc"><b>Matěj</b><span class="yr">2022</span></div></li></ul></li><li><div class="dc"><b>Adéla</b><span class="yr">2003</span></div></li></ul></li><li><div class="dc"><b>Jana Hospodková, Benešová</b><span class="yr">1969?</span><span class="sp">∞ Miroslav Hospodka</span><span class="sp">∞ Martin Beneš (†2014?)</span></div><ul><li><div class="dc"><b>Viktorie Hospodková</b></div></li><li><div class="dc"><b>Veronika Benešová</b><span class="yr">2007?</span></div></li><li><div class="dc"><b>Martin Beneš</b><span class="yr">2009?</span></div></li><li><div class="dc"><b>Natálie Benešová</b><span class="yr">2014?</span></div></li></ul></li></ul></li></ul></div></section>
+  <section class="br7"><h3>Aurelie Peterková (1947)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Aurelie Peterková</b><span class="yr">1947</span><span class="sp">∞ Miroslav Peterka st. (1944)</span></div><ul><li><div class="dc"><b>Miroslav ml.</b><span class="yr">1969</span><span class="sp">∞ Lenka roz. Kuteničová? (1970)</span></div><ul><li><div class="dc"><b>Tadeáš</b><span class="yr">1998</span></div></li><li><div class="dc"><b>Matouš</b><span class="yr">2003</span></div></li></ul></li><li><div class="dc"><b>Aurelie Stiborová</b><span class="yr">1972</span><span class="sp">∞ Jiří Stibor (1968)</span></div><ul><li><div class="dc"><b>Vlastimil Peterka</b><span class="yr">2000</span></div></li><li><div class="dc"><b>Veronika Stiborová</b><span class="yr">2002</span></div></li><li><div class="dc"><b>Markéta</b><span class="yr">2006</span></div></li></ul></li></ul></li></ul></div></section>
+  <section class="br7"><h3>Vlastimil (1949?)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Vlastimil</b><span class="yr">1949?</span><span class="sp">∞ Zdenka roz. Rejholcová</span><span class="nt">list je na fotce rozmazaný</span></div><ul><li><div class="dc"><b>Zdenka Havelková</b><span class="sp">∞ Ing. Petr Havelka</span></div><ul><li><div class="dc"><b>Matěj? Havelka</b></div></li><li><div class="dc"><b>Ema Havelková</b></div></li></ul></li><li><div class="dc"><b>Zuzana Fuitková</b><span class="yr">1973?</span><span class="sp">∞ Milan Fuitík</span></div><ul><li><div class="dc"><b>Mgr. Lucie Valečková</b><span class="yr">1991?</span><span class="sp">∞ Ing. Martin Valeček</span></div><ul><li><div class="dc"><b>Natálie</b><span class="yr">2021</span></div></li><li><div class="dc"><b>Ondřej</b><span class="yr">2022</span></div></li></ul></li></ul></li></ul></li></ul></div></section>
+  <section class="br7"><h3>Ctibor st. (1951)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Ctibor st.</b><span class="yr">1951</span><span class="sp">∞ Dana roz. Vítová (1957)</span></div><ul><li><div class="dc"><b>Lenka Nápravníková</b><span class="yr">1976</span><span class="sp">∞ Roman Nápravník (1972)</span></div><ul><li><div class="dc"><b>Adam</b><span class="yr">2006</span></div></li><li><div class="dc"><b>Ondra</b><span class="yr">2010</span></div></li></ul></li><li><div class="dc"><b>Ctibor ml.</b><span class="yr">1980</span><span class="sp">∞ Petra roz. Čabáková</span></div><ul><li><div class="dc"><b>Evelína</b><span class="yr">2005</span></div></li><li><div class="dc"><b>Matěj</b><span class="yr">2007</span></div></li><li><div class="dc"><b>Vavřinec</b><span class="yr">2010</span></div></li></ul></li><li><div class="dc"><b>Jana Šeberková</b><span class="yr">1992</span><span class="sp">∞ Jan Šeberka</span></div><ul><li><div class="dc"><b>Vít Šeberka</b><span class="yr">2019</span></div></li><li><div class="dc"><b>Josef Šeberka</b><span class="yr">2021</span></div></li></ul></li><li><div class="dc"><b>Jakub</b><span class="yr">1997</span><span class="sp">∞ Dominika Schmidtová</span></div></li></ul></li></ul></div></section>
+  <section class="br7"><h3>Ing. Jiří (1954)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Ing. Jiří</b><span class="yr">1954</span><span class="sp">∞ Ing. Helena roz. Krejsová (1954)</span></div><ul><li><div class="dc"><b>Mgr. Přemysl</b><span class="yr">1978</span><span class="sp">∞ Ing. Jana roz. Česneková (1977)</span></div><ul><li><div class="dc"><b>Ela</b><span class="yr">2014</span></div></li><li><div class="dc"><b>Adam</b><span class="yr">2016</span></div></li></ul></li><li><div class="dc"><b>Ing. Vít, MBA</b><span class="yr">1984</span><span class="sp">∞ Mgr. Tereza roz. Suntychová (1993)</span></div><ul><li><div class="dc"><b>Vincent</b><span class="yr">2023</span></div></li></ul></li></ul></li></ul></div></section>
+  <section class="br7"><h3>Martina Kubátová (1955)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Martina Kubátová</b><span class="yr">1955</span><span class="sp">∞ Zdeněk Kubát (1952)</span></div><ul><li><div class="dc"><b>Martin Kubát</b><span class="yr">1976</span><span class="sp">∞ Martina roz. Babická? (1976)</span><span class="sp">∞ Veronika roz. Roubíčková (1976)</span><span class="nt">přiřazení dětí k matkám nejisté</span></div><ul><li><div class="dc"><b>Nikola Kubátová</b><span class="yr">1996</span></div><ul><li><div class="dc"><b>Matyáš</b><span class="yr">2023</span></div></li></ul></li><li><div class="dc"><b>Daniel Kubát</b><span class="yr">1999</span></div></li><li><div class="dc"><b>Samuel Kubát</b><span class="yr">2010</span></div></li><li><div class="dc"><b>Kristián Kubát</b><span class="yr">2016</span></div></li></ul></li><li><div class="dc"><b>Zdeněk Kubát ml.</b><span class="yr">1978</span><span class="sp">∞ Vlasta Mlíjnovská? (1978)</span></div><ul><li><div class="dc"><b>Eliška Kubátová</b><span class="yr">2008</span></div></li><li><div class="dc"><b>Šimon Kubát</b><span class="yr">2013</span></div></li></ul></li></ul></li></ul></div></section>
 
   <h2>Osoby a zápisy</h2>
   <article class="person" id="rudolf">
