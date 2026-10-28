@@ -72,7 +72,19 @@ details.br .sp{color:var(--mut)}
 .mlegend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:18px}.gal figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:0;border-radius:0}.gal figcaption{padding:8px 10px;font-size:.9rem}.gal .cr{color:var(--mut);font-size:.78rem}
 .places{columns:2 260px;margin:12px 0 0;padding-left:0;list-style:none;font-size:.95rem}.places li{margin:3px 0;break-inside:avoid}
-/*dt*/.dtw{overflow-x:auto;margin-top:12px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+/*pr*/.lad{margin-top:14px;display:grid;gap:0}
+.lad-r{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.3fr);gap:8px 12px;align-items:start;position:relative;padding-bottom:14px}
+.lad-r::before{content:"";position:absolute;left:calc(5.5rem + 24px);top:0;bottom:0;border-left:2px solid var(--line)}
+.lad-r:last-child::before{bottom:50%}
+.lad-g{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;padding-top:10px;text-align:right}
+.lad-m,.lad-s{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:.9rem;line-height:1.35}
+.lad-m{border-left:4px solid var(--acc)}.lad-s{border-style:dashed}
+.lad-m b,.lad-s b{display:block;font-weight:600}.lad-m .yr,.lad-s .yr{display:block;color:var(--mut);font-size:.84rem}
+.lad-m .nt{display:block;color:var(--un);font-size:.78rem;font-style:italic}.lad-s .kol{display:block;color:var(--acc);font-size:.82rem;margin-top:2px}
+.lad-ss{display:flex;flex-wrap:wrap;gap:8px}.lad-ss:empty{display:none}
+@media (max-width:640px){.lad-r{grid-template-columns:3.2rem minmax(0,1fr)}.lad-r::before{left:calc(3.2rem + 20px)}.lad-ss{grid-column:2}.lad-g{font-size:.7rem}}
+.pstat{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pstat div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:150px}.pstat b{display:block;font-size:1.5rem;font-variant-numeric:tabular-nums}.pstat span{color:var(--mut);font-size:.88rem}
+/*/pr*//*dt*/.dtw{overflow-x:auto;margin-top:12px;padding-bottom:6px;-webkit-overflow-scrolling:touch}
 .dt,.dt ul{display:flex;justify-content:center;margin:0;padding:0}
 .dt{width:max-content;min-width:100%}
 .dt ul{padding-top:18px;position:relative}
@@ -92,19 +104,7 @@ details.br .sp{color:var(--mut)}
 .dc.top{border-left:4px solid var(--acc);max-width:180px}
 .gens{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--mut);margin-top:6px}
 .br7{margin-top:22px}.br7 h3{margin:0 0 2px;font-size:1.05rem}
-/*/dt*//*pr*/.lad{margin-top:14px;display:grid;gap:0}
-.lad-r{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.3fr);gap:8px 12px;align-items:start;position:relative;padding-bottom:14px}
-.lad-r::before{content:"";position:absolute;left:calc(5.5rem + 24px);top:0;bottom:0;border-left:2px solid var(--line)}
-.lad-r:last-child::before{bottom:50%}
-.lad-g{font-size:.78rem;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;padding-top:10px;text-align:right}
-.lad-m,.lad-s{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 11px;font-size:.9rem;line-height:1.35}
-.lad-m{border-left:4px solid var(--acc)}.lad-s{border-style:dashed}
-.lad-m b,.lad-s b{display:block;font-weight:600}.lad-m .yr,.lad-s .yr{display:block;color:var(--mut);font-size:.84rem}
-.lad-m .nt{display:block;color:var(--un);font-size:.78rem;font-style:italic}.lad-s .kol{display:block;color:var(--acc);font-size:.82rem;margin-top:2px}
-.lad-ss{display:flex;flex-wrap:wrap;gap:8px}.lad-ss:empty{display:none}
-@media (max-width:640px){.lad-r{grid-template-columns:3.2rem minmax(0,1fr)}.lad-r::before{left:calc(3.2rem + 20px)}.lad-ss{grid-column:2}.lad-g{font-size:.7rem}}
-.pstat{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.pstat div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:150px}.pstat b{display:block;font-size:1.5rem;font-variant-numeric:tabular-nums}.pstat span{color:var(--mut);font-size:.88rem}
-/*/pr*/</style>
+/*/dt*/</style>
 </head>
 <body>
 <main>
@@ -169,7 +169,7 @@ details.br .sp{color:var(--mut)}
     <div class="gen">
       <div class="pair"><div class="pl">∞ 21. 12. 1940 (přípis v matrice, čtení místa nejisté)</div><div class="pn">
         <div class="node ok"><b>Rudolf Pechlát</b><span class="f"><i>*</i>2. 10. 1910, Jetišov čp. 4</span><span class="f"><i>†</i>3. 7. 1962 (MyHeritage)</span><span class="f"><i>⌂</i>Příbram</span></div>
-        <div class="node un"><b>Vlasta Vladyková</b><span class="f"><i>*</i>24. 6. 1920</span><span class="f"><i>†</i>31. 3. 1996 nebo 1998 (MyHeritage, na fotkách nejasné)</span><span class="f"><i>⌂</i>Příbram</span></div>
+        <div class="node un"><b>Vlasta Vladyková</b><span class="f"><i>*</i>24. 6. 1920</span><span class="f"><i>†</i>31. 3. 1998 (MyHeritage, Geni)</span><span class="f"><i>⌂</i>Příbram</span></div>
       </div></div>
     </div>
     <p class="sibs">Rudolfovi sourozenci (všichni narozeni v Jetišově čp. 4, ověřeno v matrice): <b>František</b> (* 6. 10. 1899, † 16. 8. 1965; sňatek 1927 v Kraselově), <b>Anna</b> (* 23. 7. 1902, † 4. 9. 1950 v Doubravici; provdaná 1926 za Václava Pavlíka), nedonošený syn bez jména (24. 2. 1904), <b>Josef</b> (* 4. 3. 1905), <b>Jan</b> (* 26. 6. 1907, † 25. 8. 1907). Rudolf (1910) byl nejmladší.</p>
@@ -231,7 +231,7 @@ details.br .sp{color:var(--mut)}
 
   <h2 id="potomci">Potomci Rudolfa a Vlasty</h2>
   <p>Podle rodinného rodokmenu v MyHeritage. Každá ze sedmi větví má vlastní diagram; řádky odpovídají generacím: <b>děti Rudolfa a Vlasty</b> → <b>vnoučata</b> (např. Přemysl a Vít) → <b>pravnoučata</b> → <b>prapravnoučata</b>. U žijících uvádím jen rok narození; „?“ = na fotce listu špatně čitelné. Na telefonu lze diagram posouvat do strany.</p>
-  <div class="tree" style="margin-top:10px"><div class="pair"><div class="pl">∞ 1940</div><div class="pn"><div class="node ok"><b>Rudolf Pechlát</b><span class="f">1910–1962</span></div><div class="node un"><b>Vlasta Vladyková</b><span class="f">1920–1996/98</span></div></div></div></div>
+  <div class="tree" style="margin-top:10px"><div class="pair"><div class="pl">∞ 1940</div><div class="pn"><div class="node ok"><b>Rudolf Pechlát</b><span class="f">1910–1962</span></div><div class="node un"><b>Vlasta Vladyková</b><span class="f">1920–1998</span></div></div></div></div>
   <section class="br7"><h3>Ing. Rudolf ml. (1942)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Ing. Rudolf ml.</b><span class="yr">1942</span><span class="sp">∞ Alena roz. Kopecká (1947–2010)</span></div><ul><li><div class="dc"><b>Mgr. Ctibor</b><span class="yr">1976</span><span class="sp">∞ Mgr. Svatava roz. Filipová (1977)</span></div><ul><li><div class="dc"><b>Barbora</b><span class="yr">2007</span></div></li><li><div class="dc"><b>Klára</b><span class="yr">2009</span></div></li></ul></li><li><div class="dc"><b>Bc. Matěj</b><span class="yr">1977</span><span class="sp">∞ Ing. Barbora roz. Gajdošová (1977)</span></div><ul><li><div class="dc"><b>Lucie</b><span class="yr">2007</span></div></li></ul></li><li><div class="dc"><b>Bohdan</b><span class="yr">1981</span><span class="sp">∞ Arlene Baldovino Martinez (1981)</span></div><ul><li><div class="dc"><b>Artur Jacob</b><span class="yr">2019</span></div></li></ul></li></ul></li></ul></div></section>
   <section class="br7"><h3>Jan (1943–2015)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Jan</b><span class="yr">1943–2015</span><span class="sp">∞ Milena roz. Černá</span></div><ul><li><div class="dc"><b>Jan ml.</b><span class="yr">1968?</span><span class="sp">∞ Drahuše?</span><span class="sp">∞ Pavla roz. Guziorová?</span><span class="nt">přiřazení dětí k matkám nejisté</span></div><ul><li><div class="dc"><b>Lukáš</b><span class="sp">∞ Kamila</span></div><ul><li><div class="dc"><b>dcera</b><span class="yr">2018?</span></div></li></ul></li><li><div class="dc"><b>Jakub</b><span class="yr">1995?</span><span class="sp">∞ Nikola Mrkvicová</span></div><ul><li><div class="dc"><b>Magda</b><span class="yr">2021</span></div></li><li><div class="dc"><b>Matěj</b><span class="yr">2022</span></div></li></ul></li><li><div class="dc"><b>Adéla</b><span class="yr">2003</span></div></li></ul></li><li><div class="dc"><b>Jana Hospodková, Benešová</b><span class="yr">1969?</span><span class="sp">∞ Miroslav Hospodka</span><span class="sp">∞ Martin Beneš (†2014?)</span></div><ul><li><div class="dc"><b>Viktorie Hospodková</b></div></li><li><div class="dc"><b>Veronika Benešová</b><span class="yr">2007?</span></div></li><li><div class="dc"><b>Martin Beneš</b><span class="yr">2009?</span></div></li><li><div class="dc"><b>Natálie Benešová</b><span class="yr">2014?</span></div></li></ul></li></ul></li></ul></div></section>
   <section class="br7"><h3>Aurelie Peterková (1947)</h3><div class="dtw"><ul class="dt"><li><div class="dc top"><b>Aurelie Peterková</b><span class="yr">1947</span><span class="sp">∞ Miroslav Peterka st. (1944)</span></div><ul><li><div class="dc"><b>Miroslav ml.</b><span class="yr">1969</span><span class="sp">∞ Lenka roz. Kuteničová? (1970)</span></div><ul><li><div class="dc"><b>Tadeáš</b><span class="yr">1998</span></div></li><li><div class="dc"><b>Matouš</b><span class="yr">2003</span></div></li></ul></li><li><div class="dc"><b>Aurelie Stiborová</b><span class="yr">1972</span><span class="sp">∞ Jiří Stibor (1968)</span></div><ul><li><div class="dc"><b>Vlastimil Peterka</b><span class="yr">2000</span></div></li><li><div class="dc"><b>Veronika Stiborová</b><span class="yr">2002</span></div></li><li><div class="dc"><b>Markéta</b><span class="yr">2006</span></div></li></ul></li></ul></li></ul></div></section>
