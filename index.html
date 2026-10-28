@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Rod Pechlátů z Jetišova</title>
-<meta name="description" content="Rodokmen Pechlátů z Jetišova a Radkovic u Strakonic podle matrik SOA Třeboň.">
+<title>Rod Pechlátů z Radkovic</title>
+<meta name="description" content="Rodokmen Pechlátů z Radkovic u Čestic (okres Strakonice) podle matrik SOA Třeboň.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
 :root{--bg:#f6f2ea;--card:#fffdf8;--ink:#2a2620;--mut:#6d655a;--line:#e2d9c9;--acc:#7a4a24;--ok:#2f6b3a;--ok-bg:#e5f0e4;--un:#8a5a00;--un-bg:#fbefd6;--kr:#3d5a8a;--kr-bg:#e3eaf6;color-scheme:light}
@@ -38,6 +40,7 @@ a{color:var(--acc);text-underline-offset:3px}
 #mapa{height:min(70vh,560px);border-radius:14px;border:1px solid var(--line);margin-top:12px;background:var(--card)}
 .leaflet-popup-content{font:15px/1.45 "Source Sans 3",system-ui,sans-serif}
 .leaflet-popup-content b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem}
+.mbtn{font:inherit;font-size:.9rem;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 .pin{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 13px/1 "Source Sans 3",system-ui,sans-serif;border:3px solid #fffdf8;box-shadow:0 2px 8px rgba(0,0,0,.35)}
 .mlegend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:.92rem;color:var(--mut)}
 .mlegend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
@@ -81,15 +84,24 @@ details.br .sp{color:var(--mut)}
 .dc.top{border-left:4px solid var(--acc);max-width:180px}
 .gens{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--mut);margin-top:6px}
 .br7{margin-top:22px}.br7 h3{margin:0 0 2px;font-size:1.05rem}
-/*/dt*/</style>
+/*/dt*/#mapa{height:min(70vh,560px);border-radius:14px;border:1px solid var(--line);margin-top:12px;background:var(--card)}
+.leaflet-popup-content{font:15px/1.45 "Source Sans 3",system-ui,sans-serif}
+.leaflet-popup-content b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem}
+.pin{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 13px/1 "Source Sans 3",system-ui,sans-serif;border:3px solid #fffdf8;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.mlegend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:.92rem;color:var(--mut)}
+.mlegend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:18px}.gal figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:0;border-radius:0}.gal figcaption{padding:8px 10px;font-size:.9rem}.gal .cr{color:var(--mut);font-size:.78rem}
+.places{columns:2 260px;margin:12px 0 0;padding-left:0;list-style:none;font-size:.95rem}.places li{margin:3px 0;break-inside:avoid}
+</style>
 </head>
 <body>
 <main>
-  <p class="kick">Rodokmen · Jetišov u Volyně</p>
-  <h1>Rod Pechlátů z Jetišova</h1>
+  <p class="kick">Rodokmen · Radkovice u Čestic, okres Strakonice</p>
+  <h1>Rod Pechlátů z Radkovic</h1>
   <p class="lead">Předci z tatínkovy strany. Údaje pocházejí z digitalizovaných matrik Státního oblastního archivu v Třeboni a z rodinného rodokmenu v MyHeritage. U ověřených zápisů je odkaz na snímek matriky, jeho výřez a přepis. Údaje o žijících lidech uvádím jen v nezbytné míře. Maminčina větev je na webu <a href="https://milarapa2.github.io/rodokmen-krejsa/">Rod Krejsů ze Šumavských Hoštic</a>.</p>
   <div class="tr" style="border-left:3px solid var(--line)"><b>Co je nového (28. 10. 2026)</b>
     <ul style="margin:6px 0 0;padding-left:1.2em">
+      <li><b>Mapa míst</b> a nový název: rod pochází z <b>Radkovic u Čestic</b> (okres Strakonice) – <a href="#mapa-mist">Kde rod žil</a>.</li>
       <li><b>Doplněna moderní rodina:</b> diagram všech sedmi větví potomků Rudolfa a Vlasty po generacích (sourozenci táty Jiřího, jejich děti, vnoučata a pravnoučata) – <a href="#potomci">Potomci</a>.</li>
       <li><b>O dvě generace dál:</b> svatba prapradědy Františka Pechláta s Marií Šímovou (12. 11. 1861, Hodějov). Rod sahá v Radkovicích čp. 9 k Václavovi (asi 1805–1865) a Bartolomějovi. Všichni Pechláti z farnosti Čestice v letech 1749–1877 pocházeli z Radkovic (čp. 9 a 10).</li>
       <li><b>Nalezen křest dědy Rudolfa:</b> narodil se 2. 10. 1910 v Jetišově čp. 4 (fara Čestice), ne v Příbrami, kde později žil.</li>
@@ -157,6 +169,46 @@ details.br .sp{color:var(--mut)}
       <div class="node un"><b>Přemysl</b><span class="f">1978</span></div><div class="node un"><b>Vít</b><span class="f">1984</span></div>
     </div></div></div>
   </div>
+
+  <h2 id="mapa-mist">Kde rod žil</h2>
+  <p class="lead">Rod pochází z Radkovic u Čestic (dnes část obce Úlehle, okres Strakonice, Jihočeský kraj) – ne z Radkovic na Plzeňsku. Radkovice, Hodějov, Kraselov a Jetišov leží v okruhu asi 5 km; Rudolf pak odešel do Příbrami. Čára ukazuje stěhování rodu, barva dobu, číslo pořadí. Na značku se dá kliknout.</p>
+  <p style="margin:10px 0 0;display:flex;gap:8px;flex-wrap:wrap"><button type="button" id="mz1" class="mbtn">Okolí Radkovic</button><button type="button" id="mz2" class="mbtn">Včetně Příbrami</button></p>
+  <div id="mapa" role="img" aria-label="Mapa míst, kde žil rod Pechlátů"></div>
+  <div class="mlegend"><span><i style="background:#8a5a2b"></i>18. a 1. pol. 19. století</span><span><i style="background:#3d5a8a"></i>2. pol. 19. století</span><span><i style="background:#9b3d5c"></i>20. století</span><span><i style="background:#9a9184"></i>okolí, souvislosti</span></div>
+  <ul class="places" id="mista"></ul>
+  <div class="gal"><figure><img src="img/foto_radkovice.jpg" alt="Radkovice čp. 9" loading="lazy"><figcaption><b>Radkovice čp. 9</b> – Rodná usedlost<br><span class="cr">Foto: <a href="https://commons.wikimedia.org/wiki/File:Radkovice-Ulehle2.jpg" rel="noopener">User:Japo</a>, Public domain, Wikimedia Commons</span></figcaption></figure><figure><img src="img/foto_hodejov.jpg" alt="Hodějov čp. 23" loading="lazy"><figcaption><b>Hodějov čp. 23</b> – Šímovi<br><span class="cr">Foto: <a href="https://commons.wikimedia.org/wiki/File:Hodejov.JPG" rel="noopener">Kubajzs</a>, Public domain, Wikimedia Commons</span></figcaption></figure><figure><img src="img/foto_kraselov.jpg" alt="Kraselov čp. 30" loading="lazy"><figcaption><b>Kraselov čp. 30</b> – Krejčí<br><span class="cr">Foto: <a href="https://commons.wikimedia.org/wiki/File:Kraselov-church2.jpg" rel="noopener">User:Japo</a>, Public domain, Wikimedia Commons</span></figcaption></figure><figure><img src="img/foto_jetisov.jpg" alt="Jetišov čp. 4" loading="lazy"><figcaption><b>Jetišov čp. 4</b> – Domek Jana a Anny Pechlátových<br><span class="cr">Foto: <a href="https://commons.wikimedia.org/wiki/File:Jeti%C5%A1ov-kaple2.jpg" rel="noopener">Nissan0</a>, CC BY-SA 3.0, Wikimedia Commons</span></figcaption></figure><figure><img src="img/foto_pribram.jpg" alt="Příbram" loading="lazy"><figcaption><b>Příbram</b> – Rudolf a Vlasta Pechlátovi a jejich sedm dětí (podle rodiny).<br><span class="cr">Foto: <a href="https://commons.wikimedia.org/wiki/File:P%C5%99%C3%ADbram-12-Jakobskirche-2012-gje.jpg" rel="noopener">Gerd Eichmann</a>, CC BY 4.0, Wikimedia Commons</span></figcaption></figure><figure><img src="img/foto_ulehle.jpg" alt="Úlehle čp. 4" loading="lazy"><figcaption><b>Úlehle čp. 4</b> – Šípkovi – Anna, žena Jakuba Pechláta z Radkovic čp. 10.<br><span class="cr">Foto: <a href="https://commons.wikimedia.org/wiki/File:Ulehle.jpg" rel="noopener">User:Japo</a>, Public domain, Wikimedia Commons</span></figcaption></figure><figure><img src="img/foto_cestice.jpg" alt="Čestice – fara" loading="lazy"><figcaption><b>Čestice – fara</b> – Farní kostel<br><span class="cr">Foto: <a href="https://commons.wikimedia.org/wiki/File:%C4%8Cestice,_n%C3%A1m%C4%9Bst%C3%AD.jpg" rel="noopener">JAn Dudík</a>, Public domain, Wikimedia Commons</span></figcaption></figure></div>
+  <p class="sibs">Fotografie ukazují obce dnes; konkrétní domy rodiny na Wikimedia Commons nejsou – u každého místa v mapě je odkaz na pohled z ulice. Čísla popisná se od 18.–19. století mohla změnit.</p>
+  <script>
+  (function(){
+    var M=[
+      [1, "Radkovice čp. 9", 49.1953, 13.8325, "#8a5a2b", "Rodná usedlost: Bartoloměj Pechlát, jeho syn Václav (asi 1805–1865) a vnuk František (* 1837); zde se 14. 6. 1867 narodil Jan. V sousedním čp. 10 žila druhá větev Pechlátů (Jakub, † 1846)."],
+      [2, "Hodějov čp. 23", 49.2061, 13.7758, "#3d5a8a", "Šímovi: domkář Josef Šíma; zde se 12. 11. 1861 vzali František Pechlát a Marie Šímová."],
+      [3, "Kraselov čp. 30", 49.2279, 13.804, "#3d5a8a", "Krejčí: tesař Vojtěch Krejčí; 3. 6. 1870 se zde narodila Anna, 26. 1. 1897 svatba Jana Pechláta a Anny Krejčí."],
+      [4, "Jetišov čp. 4", 49.2008, 13.8203, "#9b3d5c", "Domek Jana a Anny Pechlátových; děti 1899–1910, mezi nimi 2. 10. 1910 Rudolf."],
+      [5, "Příbram", 49.69, 14.0105, "#9b3d5c", "Rudolf a Vlasta Pechlátovi a jejich sedm dětí (podle rodiny)."],
+      [0, "Úlehle čp. 4", 49.2015, 13.8384, "#9a9184", "Šípkovi – Anna, žena Jakuba Pechláta z Radkovic čp. 10."],
+      [0, "Čestice – fara", 49.1679, 13.8037, "#9a9184", "Farní kostel: tady byli Pechláti z Radkovic a Jetišova křtěni a zapisováni do matrik."]
+    ];
+    var FOTO={"Radkovice čp. 9": "radkovice", "Hodějov čp. 23": "hodejov", "Kraselov čp. 30": "kraselov", "Jetišov čp. 4": "jetisov", "Příbram": "pribram", "Úlehle čp. 4": "ulehle", "Čestice – fara": "cestice"};
+    var ol=document.getElementById("mista");
+    M.forEach(function(m){var li=document.createElement("li");li.textContent=(m[0]?m[0]+". ":"")+m[1]+" – "+m[5];ol.appendChild(li)});
+    if(!window.L)return;
+    var map=L.map("mapa",{scrollWheelZoom:false});
+    L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",{maxZoom:15,attribution:"&copy; OpenStreetMap, SRTM | styl &copy; OpenTopoMap (CC-BY-SA)"}).addTo(map);
+    var path=M.filter(function(m){return m[0]}).sort(function(a,b){return a[0]-b[0]}).map(function(m){return [m[2],m[3]]});
+    L.polyline(path,{color:"#7a4a24",weight:3,opacity:.55,dashArray:"6 8"}).addTo(map);
+    var b=[],loc=[];
+    M.forEach(function(m){
+      var ic=L.divIcon({className:"",html:'<div class="pin" style="background:'+m[4]+'">'+(m[0]||"·")+'</div>',iconSize:[34,34],iconAnchor:[17,17]});
+      var mk=L.marker([m[2],m[3]],{icon:ic,title:m[1]}).addTo(map);
+      var d=document.createElement("div");d.style.maxWidth="260px";var f=FOTO[m[1]];if(f){var im=document.createElement("img");im.src="img/foto_"+f+".jpg";im.alt=m[1];im.style.cssText="width:100%;border-radius:6px;margin-bottom:6px";d.appendChild(im);}var t=document.createElement("b");t.textContent=m[1];d.appendChild(t);d.appendChild(document.createElement("br"));d.appendChild(document.createTextNode(m[5]));d.appendChild(document.createElement("br"));var a=document.createElement("a");a.href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint="+m[2]+","+m[3];a.target="_blank";a.rel="noopener";a.textContent="Pohled z ulice (Google)";d.appendChild(a);d.appendChild(document.createTextNode(" · "));var a2=document.createElement("a");a2.href="https://mapy.cz/zakladni?q="+m[2]+"%2C"+m[3]+"&z=16";a2.target="_blank";a2.rel="noopener";a2.textContent="Mapy.cz";d.appendChild(a2);
+      mk.bindPopup(d);b.push([m[2],m[3]]);if(m[0]!==5)loc.push([m[2],m[3]]);
+    });
+    map.fitBounds(loc,{padding:[30,30]});
+    document.getElementById("mz1").onclick=function(){map.fitBounds(loc,{padding:[30,30]})};
+    document.getElementById("mz2").onclick=function(){map.fitBounds(b,{padding:[30,30]})};
+  })();
+  </script>
 
   <h2 id="potomci">Potomci Rudolfa a Vlasty</h2>
   <p>Podle rodinného rodokmenu v MyHeritage. Každá ze sedmi větví má vlastní diagram; řádky odpovídají generacím: <b>děti Rudolfa a Vlasty</b> → <b>vnoučata</b> (např. Přemysl a Vít) → <b>pravnoučata</b> → <b>prapravnoučata</b>. U žijících uvádím jen rok narození; „?“ = na fotce listu špatně čitelné. Na telefonu lze diagram posouvat do strany.</p>
