@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Rod Pechlátů z Jetišova</title>
+<meta name="description" content="Rodokmen Pechlátů z Jetišova a Radkovic u Strakonic podle matrik SOA Třeboň.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{--bg:#f6f2ea;--card:#fffdf8;--ink:#2a2620;--mut:#6d655a;--line:#e2d9c9;--acc:#7a4a24;--ok:#2f6b3a;--ok-bg:#e5f0e4;--un:#8a5a00;--un-bg:#fbefd6;--kr:#3d5a8a;--kr-bg:#e3eaf6;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#171512;--card:#211e1a;--ink:#ece5d8;--mut:#a89e8f;--line:#3a342c;--acc:#d9a46b;--ok:#8fd19a;--ok-bg:#1f3322;--un:#e8b85a;--un-bg:#3a2d12;--kr:#9db8e8;--kr-bg:#1d2a40;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "Source Sans 3",system-ui,sans-serif}
+main{max-width:980px;margin:0 auto;padding:32px 16px 64px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.1rem,6vw,3.2rem)}
+h2{font-size:1.7rem;margin:44px 0 12px}
+h3{font-size:1.35rem}
+.kick{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:600;margin:0 0 8px}
+.lead{max-width:62ch;color:var(--mut);margin:12px 0 0}
+a{color:var(--acc);text-underline-offset:3px}
+.tree{display:grid;gap:0;margin-top:20px;justify-items:center;width:min(1240px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%)}
+.gen{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.node{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;min-width:200px;max-width:280px;text-align:center}
+.node b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:1.25rem;font-weight:600}
+.node span{color:var(--mut);font-size:.9rem}
+.pair{border:1px dashed var(--line);border-radius:16px;padding:8px 10px 10px}.pair .pl{font-size:.8rem;color:var(--mut);text-align:center;margin-bottom:6px;letter-spacing:.03em}.pair .pn{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.node .f{display:block;text-align:left;line-height:1.35}.node.wide{max-width:420px}.node .f.tl{padding-left:1.2em;font-size:.84rem;margin-top:2px}.node .f i{display:inline-block;width:1.2em;font-style:normal;color:var(--ink,inherit);font-weight:600}
+.node.kr{border-left:5px solid var(--kr)}.badge.kr{background:var(--kr-bg);color:var(--kr)}
+.node.ok{border-left:5px solid var(--ok)}.node.un{border-left:5px dashed var(--un)}.node.gap{border-style:dashed;color:var(--mut)}
+.ln{width:2px;height:22px;background:var(--line)}
+.badge{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px}
+.badge.ok{background:var(--ok-bg);color:var(--ok)}.badge.un{background:var(--un-bg);color:var(--un)}
+.sibs{max-width:640px;text-align:center;color:var(--mut);font-size:.9rem;margin:6px auto 0}
+#mapa{height:min(70vh,560px);border-radius:14px;border:1px solid var(--line);margin-top:12px;background:var(--card)}
+.leaflet-popup-content{font:15px/1.45 "Source Sans 3",system-ui,sans-serif}
+.leaflet-popup-content b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem}
+.pin{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 13px/1 "Source Sans 3",system-ui,sans-serif;border:3px solid #fffdf8;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.mlegend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:.92rem;color:var(--mut)}
+.mlegend i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:18px}.gal figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}.gal img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border:0;border-radius:0}.gal figcaption{padding:8px 10px;font-size:.9rem}.gal .cr{color:var(--mut);font-size:.78rem}
+.places{columns:2 260px;margin:12px 0 0;padding-left:0;list-style:none;font-size:.95rem}.places li{margin:3px 0;break-inside:avoid}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:14px;font-size:.92rem;color:var(--mut)}
+.person{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:14px}
+.person header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
+dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:12px 0 0}
+dt{color:var(--mut);font-size:.9rem}dd{margin:0}
+figure{margin:14px 0 0}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block;background:#fff}
+figure img+img{margin-top:6px}
+figcaption{font-size:.9rem;color:var(--mut);margin-top:6px}
+.tr{background:var(--bg);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:.95rem}
+.tr i{color:var(--mut)}
+ol.log{padding-left:1.2em}ol.log li{margin:6px 0}
+footer{margin-top:48px;color:var(--mut);font-size:.88rem;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:480px){dl{grid-template-columns:1fr}dt{margin-top:6px}}
+</style>
+</head>
+<body>
+<main>
+  <p class="kick">Rodokmen · Jetišov u Volyně</p>
+  <h1>Rod Pechlátů z Jetišova</h1>
+  <p class="lead">Předci z tatínkovy strany. Údaje pocházejí z digitalizovaných matrik Státního oblastního archivu v Třeboni a z rodinného rodokmenu v MyHeritage. U ověřených zápisů je odkaz na snímek matriky, jeho výřez a přepis. Údaje o žijících lidech uvádím jen v nezbytné míře. Maminčina větev je na webu <a href="https://milarapa2.github.io/rodokmen-krejsa/">Rod Krejsů ze Šumavských Hoštic</a>.</p>
+  <div class="tr" style="border-left:3px solid var(--line)"><b>Co je nového (28. 10. 2026)</b>
+    <ul style="margin:6px 0 0;padding-left:1.2em">
+      <li><b>Nalezen křest dědy Rudolfa:</b> narodil se 2. 10. 1910 v Jetišově čp. 4 (fara Čestice), ne v Příbrami, kde později žil.</li>
+      <li><b>O generaci dál:</b> jeho otec Jan Pechlát (* 14. 6. 1867 v Radkovicích čp. 9) byl syn Františka Pechláta a Marie roz. Šímové z Hodějova; matka Anna (* 3. 6. 1870 v Kraselově čp. 30) byla dcera lesaře Vojtěcha Krejčího a Anny roz. Dubové. Jan a Anna se vzali 26. 1. 1897 v Kraselově.</li>
+    </ul>
+  </div>
+
+  <h2>Rodokmen</h2>
+  <p class="legend"><span class="badge ok">ověřeno v matrice</span> <span class="badge un">z rodinného rodokmenu (MyHeritage)</span></p>
+  <div class="tree" aria-label="Rodokmen">
+    <div class="gen">
+      <div class="pair"><div class="pl">rodiče Jana Pechláta</div><div class="pn">
+        <div class="node ok"><b>František Pechlát</b><span class="f"><i>⌂</i>chalupník, Radkovice čp. 9</span></div>
+        <div class="node ok"><b>Marie Šímová</b><span class="f"><i>⌂</i>z Hodějova čp. 23</span></div>
+      </div></div>
+      <div class="pair"><div class="pl">rodiče Anny Krejčí</div><div class="pn">
+        <div class="node ok"><b>Vojtěch Krejčí</b><span class="f"><i>⌂</i>lesař, Kraselov čp. 30</span></div>
+        <div class="node ok"><b>Anna Dubová</b><span class="f"><i>⌂</i>z Kraselova čp. 20 (příjmení Dubová/Důbová – čtení nejisté)</span></div>
+      </div></div>
+    </div>
+    <div class="ln"></div>
+    <div class="gen">
+      <div class="pair"><div class="pl">∞ 26. 1. 1897, Kraselov</div><div class="pn">
+        <div class="node ok"><b>Jan Pechlát</b><span class="f"><i>*</i>14. 6. 1867, Radkovice čp. 9</span><span class="f"><i>⌂</i>domkář, Jetišov čp. 4</span></div>
+        <div class="node ok"><b>Anna Krejčí</b><span class="f"><i>*</i>3. 6. 1870, Kraselov čp. 30</span></div>
+      </div></div>
+      <div class="pair"><div class="pl">rodiče Vlasty Vladykové</div><div class="pn">
+        <div class="node un"><b>Jan Vladyka</b><span class="f"><i>*</i>25. 4. 1877</span><span class="f"><i>†</i>asi 1948</span></div>
+        <div class="node un"><b>Kateřina Tošnerová</b><span class="f"><i>*</i>6. 1. 1881</span><span class="f"><i>†</i>8. 8. 1952</span></div>
+      </div></div>
+    </div>
+    <div class="ln"></div>
+    <div class="gen">
+      <div class="pair"><div class="pl">∞ 21. 12. 1940 (přípis v matrice, čtení místa nejisté)</div><div class="pn">
+        <div class="node ok"><b>Rudolf Pechlát</b><span class="f"><i>*</i>2. 10. 1910, Jetišov čp. 4</span><span class="f"><i>†</i>3. 7. 1962 (MyHeritage)</span><span class="f"><i>⌂</i>Příbram</span></div>
+        <div class="node un"><b>Vlasta Vladyková</b><span class="f"><i>*</i>24. 6. 1920</span><span class="f"><i>†</i>31. 3. 1998</span><span class="f"><i>⌂</i>Příbram</span></div>
+      </div></div>
+    </div>
+    <p class="sibs">Rudolfovi sourozenci (Jetišov čp. 4, podle náhledů matriky): Josef (* 4. 3. 1905), Jan (* 1907) – dočíst.</p>
+    <div class="ln"></div>
+    <div class="gen"><div class="node wide un"><b>Sedm dětí Rudolfa a Vlasty</b><span class="f">Rudolf (1942), Jan (1943–2015), Aurelie (1947), Vlastimil, Ctibor (1951), Jiří (1954), Martina (1955)</span></div></div>
+    <div class="ln"></div>
+    <div class="gen"><div class="node"><b>Jiří Pechlát</b><span class="f"><i>∞</i>Helena Krejsová (viz <a href="https://milarapa2.github.io/rodokmen-krejsa/">Rod Krejsů</a>)</span></div></div>
+    <div class="ln"></div>
+    <div class="gen"><div class="node"><b>Vít Pechlát</b></div></div>
+  </div>
+
+  <h2>Osoby a zápisy</h2>
+  <article class="person" id="rudolf">
+    <header><h3>Rudolf Pechlát</h3><span class="badge ok">ověřeno</span></header>
+    <dl>
+      <dt>Křest</dt><dd>narozen <b>2. 10. 1910</b>, pokřtěn 3. 10. 1910, Jetišov čp. 4; matrika N Jetišov 1840–1923, fara Čestice (<a href="https://digi.ceskearchivy.cz/9608/65" rel="noopener">snímek 65</a>). Křtil kaplan Jan Florian, porodní bába Karolína Nikodemová z Němčic.</dd>
+      <dt>Otec</dt><dd>Jan Pechlát, domkář v Jetišově čp. 4, manž. syn Františka Pechláta, chalupníka z Radkovic čp. 9, a Marie rozené Šímové z Hodějova čp. 23; narozen v Radkovicích čp. 9, okres a hejtmanství Strakonice, 14. 6. 1867.</dd>
+      <dt>Matka</dt><dd>Anna, dcera Vojtěcha Krejčího, lesaře z Kraselova čp. 30, a Anny rozené Dubové z Kraselova čp. 20; narozena v Kraselově čp. 30, okres Volyně, 3. 6. 1870. Sňatek rodičů 26. 1. 1897 v Kraselově.</dd>
+      <dt>Kmotři</dt><dd>(Vojtěch?) Krejčí, lesní mistr v Kraselově čp. 30, a Kateřina, manželka.</dd>
+      <dt>Přípis</dt><dd>„Odd. 21/12 1940 s Vlastou Vla…ovou v Ol…ici“ – sňatek s Vlastou Vladykovou; místo zatím nečitelné.</dd>
+    </dl>
+    <figure><img src="img/n1910-rudolf-a.jpg" alt="Výřez zápisu křtu Rudolfa Pechláta, levá strana" loading="lazy"><img src="img/n1910-rudolf-b.jpg" alt="Výřez zápisu, pravá strana s matkou a kmotry" loading="lazy"><figcaption>Matrika narozených Jetišov, 1910, č. 3 – SOA Třeboň.</figcaption></figure>
+  </article>
+
+  <h2 id="denik">Deník hledání</h2>
+  <ol class="log">
+    <li><b>28. 10. 2026:</b> v Příbrami (matrika narozených 1909–1913 a rejstřík farnosti 1896–1910, SOA Praha) Rudolf zapsaný není. Podle rodiny se narodil v Jetišově u Strakonic – tam nalezen (fara Čestice).</li>
+  </ol>
+  <footer>Zdroje: Státní oblastní archiv v Třeboni (digi.ceskearchivy.cz), SOA v Praze (eBadatelna), rodinný rodokmen MyHeritage. Sestavuje Claude pro Víta Pechláta.</footer>
+</main>
+</body>
+</html>
